@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сельскохозяйственный симулятор</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+
+    <div class="game-area">
+        <div class="tools-panel">
+            <h3>Инструменты</h3>
+            <div class="tools">
+                <button id="shovel" class="tool-btn active" data-tool="shovel">
+                    <span> Лопата</span>
+                    <small>Копать/Убрать растение</small>
+                </button>
+                <button id="bucket" class="tool-btn" data-tool="bucket">
+                    <span>🪣 Ведро</span>
+                    <small>Добавить/убрать воду</small>
+                </button>
+                <button id="hoe" class="tool-btn" data-tool="hoe">
+                    <span> Мотыга</span>
+                    <small>Создать грядку</small>
+                </button>
+                <div class="seeds">
+                    <h4>Семена:</h4>
+                    <button id="marsh-seed" class="seed-btn" data-plant="marsh">
+                        <span> Болотник</span>
+                        <small>Влажность: 70-100%</small>
+                    </button>
+                    <button id="potato-seed" class="seed-btn" data-plant="potato">
+                        <span> Картошка</span>
+                        <small>Влажность: 40-80%</small>
+                    </button>
+                    <button id="cactus-seed" class="seed-btn" data-plant="cactus">
+                        <span> Кактус</span>
+                        <small>Влажность: 0-30%</small>
+                    </button>
+                </div>
+            </div>
+            <div class="status">
+                <p>Выбранный инструмент: <strong id="current-tool">Лопата</strong></p>
+                <p>Ведро: <strong id="bucket-status">готово к работе</strong></p>
+                <p>Влажность: <strong id="moisture-indicator">0%</strong></p>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div id="grid" class="grid"></div>
+        </div>
+
+        <div class="info-panel">
+            <h3>Информация</h3>
+            <div id="cell-info" class="cell-info">
+                <p>Выберите клетку для просмотра информации</p>
+            </div>
+            <div id="plant-info" class="plant-info">
+                <p>Растение не выбрано</p>
+            </div>
+            <div class="instructions">
+                <h4>Как играть:</h4>
+                <ul>
+                    <li><strong>Лопата:</strong> Убрать растение или воду</li>
+                    <li><strong>Ведро:</strong> Клик на землю - добавить воду, клик на воду - убрать воду</li>
+                    <li><strong>Мотыга:</strong> Создать грядку из земли</li>
+                    <li><strong>Семена:</strong> Посадить растение на грядку</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="js/cells.js"></script>
+<script src="js/plants.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/game.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
